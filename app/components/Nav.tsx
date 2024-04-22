@@ -3,27 +3,30 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-import styles from "../styles/layout.module.css"
+// import styles from "../styles/layout.module.css"
 
 export const Nav = () => {
   const pathname = usePathname()
 
   return (
-    <nav className={styles.nav}>
+    <div className='flex font-sans'>
+      <div className='text-lg font-bold'>
+        Where The Weather At
+      </div>
       <Link
-        className={`${styles.link} ${pathname === "/" ? styles.active : ""}`}
+        // className={`${styles.link} ${pathname === "/" ? styles.active : ""}`}
         href="/"
       >
         Home
       </Link>
-      <Link
+      {/* <Link
         className={`${styles.link} ${
           pathname === "/verify" ? styles.active : ""
         }`}
         href="/verify"
       >
         Verify
-      </Link>
-    </nav>
+      </Link> */}
+    </div>
   )
 }
