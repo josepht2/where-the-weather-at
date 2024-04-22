@@ -1,0 +1,25 @@
+version: '3'
+
+services: 
+
+  backend:
+    build:
+      context: ./
+    container_name: wtwa-backend
+    volumes: 
+      - .:/app
+      - /app/node_modules
+    ports: 
+      - "8080:8080"
+    command: npm run server
+
+  frontend:
+    build:
+      context: ./
+    container_name: wtwa-frontend
+    volumes: 
+      - .:/app
+      - /app/node_modules
+    ports: 
+      - "3000:3000"
+    command: npm run dev
