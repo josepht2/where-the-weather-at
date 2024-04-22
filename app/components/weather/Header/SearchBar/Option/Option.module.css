@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+}
+
+.clearButton {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-weight: 700;
+  justify-content: center;
+  width: 36px;
+}
