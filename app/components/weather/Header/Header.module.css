@@ -1,0 +1,10 @@
+.container {
+  border-bottom: 2px solid;
+  display: flex;
+  justify-content: space-around;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: 500;
+}
