@@ -1,13 +1,13 @@
 .container {
-  display: grid;
-  grid-template-areas:
-    "nav"
-    "header"
-    "main"
-    "footer";
-  grid-template-rows: auto auto 1fr 36px;
-  align-items: center;
+  background-color: rgba(56, 118, 233);
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
+}
+
+.container2 {
+  background-color: rgb(255, 255, 255);
+  width: 70%;
 }
 
 .logo {
@@ -15,28 +15,9 @@
   pointer-events: none;
 }
 
-.header {
-  grid-area: header;
-}
-
-.main {
-  grid-area: main;
-}
-
-.header,
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer {
-  grid-area: footer;
-  justify-self: center;
-}
-
 .nav {
+  border-bottom: 2px solid;
+  border-bottom-color: #aeb0af;
   grid-area: nav;
   display: flex;
   align-items: center;
@@ -51,7 +32,7 @@
 }
 
 .link {
-  color: #704cb6;
+  color: #0070E0;
 }
 
 .link.active {

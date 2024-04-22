@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
-import { Counter } from "./components/counter/Counter";
+import type { Metadata } from "next"
+import WeatherPage from "./weather/page"
 
 export default function IndexPage() {
-  return <Counter />;
+  return (
+    <WeatherPage />
+  )
 }
 
 export const metadata: Metadata = {
-  title: "Redux Toolkit",
-};
+  title: "Where The Weather At"
+}
