@@ -1,1 +1,1 @@
-export { BodyContainer as Body } from './BodyContainer'
+export { Body } from './Body'
