@@ -9,7 +9,6 @@ import {
 import { useAppDispatch, useAppSelector } from "@/lib/hooks"
 
 import { Option } from './Option'
-import styles from './SearchBar.module.css'
 
 const selectStyles = {
     menu: (baseStyles: any) => ({
@@ -28,17 +27,19 @@ export const SearchBar = () => {
     const cityHistory = useAppSelector(selectCityHistory)
 
     const selectCity = (cityOption: any) => {
+        if (!cityOption) return
+
         dispatch(getWeather(cityOption.value))
     }
 
     return (
-        <div className={styles.container}>
-            <div className={styles.select}>
+        <div className={'flex justify-center mt-5'}>
+            <div className={'w-96'}>
                 <CreatableSelect
                     isClearable
                     components={{
                         DropdownIndicator: null,
-                        Option
+                        Option,
                     }}
                     onChange={selectCity}
                     options={cityHistory}
