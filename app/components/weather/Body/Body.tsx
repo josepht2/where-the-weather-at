@@ -1,56 +1,26 @@
 "use client"
 
-import { selectCurrentCityWeather } from "@/lib/features/weather/weatherSlice"
-import { useAppSelector } from "@/lib/hooks"
-
-import styles from './Body.module.css'
+import { Condition } from './Condition'
+import { Location } from './Location'
+import { Temperature } from './Temperature'
 
 export const Body = () => {
-    const currentCityWeather = useAppSelector(selectCurrentCityWeather)
-    
-    const {
-        location: {
-            name,
-            region,
-            country
-        },
-        current: {
-            temp_f,
-            temp_c,
-            condition: {
-                text: conditionText,
-                icon
-            }
-        }
-    } = currentCityWeather
-
     return (
-        <>
-            <div className={styles.header}>
-                <div className={styles.title}>
-                {`${name}, ${region}`}
+        <div className={'flex justify-center mt-5 bg-neutral-200'}>
+            <div className={'bg-white w-1/2 h-96 p-3 shadow rounded-lg'}>
+                <div className={'h-20 border-b border-slate-300'}>
+                    <Location />
                 </div>
-                <div className={styles.subtitle}>
-                {`${country}`}
-                </div>
-            </div>
-            <div className={styles.body}>
-                <div className={styles.temperatureContainer}>
-                    <div className={styles.temperatureText}>
-                        {`${temp_f}°F / ${temp_c}°C`}
+                <div className={'flex mt-4 h-64'}>
+                    <div className={'flex basis-3/5 items-center justify-center border-r border-slate-300'}>
+                        <Temperature />
+                    </div>
+                    <div className={'flex basis-2/5 justify-center'}>
+                        <Condition />
                     </div>
                 </div>
-                <div className={styles.conditionContainer}>
-                    <div className={styles.conditionText}>
-                        {conditionText}
-                    </div>
-                    <img
-                        className={styles.conditionImage}
-                        src={icon}
-                    />
-                </div>
             </div>
-        </>
+        </div>
     )
 }
   
