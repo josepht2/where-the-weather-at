@@ -3,7 +3,6 @@ import { StoreProvider } from "./StoreProvider"
 import { Nav } from "./components/Nav"
 
 import "./styles/globals.css"
-import styles from "./styles/layout.module.css"
 
 interface Props {
   readonly children: ReactNode
@@ -14,13 +13,14 @@ export default function RootLayout({ children }: Props) {
     <StoreProvider>
       <html lang="en">
         <body>
-          <section className={styles.container}>
-            <div className={styles.container2}>
-              <Nav />
-              <main className={styles.main}>
-                {children}
-              </main>
-            </div>
+          <section className={'bg-neutral-200 font-sans'}>
+            <Nav />
+            <main
+              className={'pb-5 overflow-y-auto'}
+              style={{ height: 'calc(100vh - 56px)' }}
+            >
+              {children}
+            </main>
           </section>
         </body>
       </html>
