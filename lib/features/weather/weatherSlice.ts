@@ -21,7 +21,6 @@ export const weatherSlice = createAppSlice({
   reducers: (create) => ({
     deleteCity: create.reducer(
       (state, action: PayloadAction<string>) => {
-        console.log(action)
         state.cityHistory = state.cityHistory.filter(
           ({ value }) => value !== action.payload
         )
